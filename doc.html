@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.3.0/lib/p5.min.js"></script>
+    <script>
+      function setup() {
+        // Create a button to request the user's location
+        var button = createButton("Get Location");
+        button.mousePressed(getLocation);
+      }
+      
+      function getLocation() {
+        // Request the user's location
+        navigator.geolocation.getCurrentPosition(showPosition);
+      }
+
+      function showPosition(position) {
+        // Log the user's latitude and longitude to the console
+        console.log("Latitude: " + position.coords.latitude);
+        console.log("Longitude: " + position.coords.longitude);
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
